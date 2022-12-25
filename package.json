@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
     "build": "npm run clean && npm run compile && npm run copy",
-    "compile": "babel src --out-dir build",
+    "compile": "npx babel ./ --out-dir build",
     "clean": "rm -rf build/*"
   },
   "repository": {
