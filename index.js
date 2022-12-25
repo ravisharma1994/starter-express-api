@@ -41,5 +41,10 @@ app.get('/', async (req, res) => {
     }, 25 * ONE_SEC_IN_MS);
 
     // res.json({image : ''});
-})
+});
+
+app.get('/home', async (req, res) => {
+    res.json({success : true});
+});
+
 app.listen(process.env.PORT || 3000)
