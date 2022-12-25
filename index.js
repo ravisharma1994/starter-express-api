@@ -9,8 +9,8 @@ app.get('/', async (req, res) => {
 
     let searchString = req.query.value;
 
-    // const browser = await puppeteer.launch({executablePath: '/usr/bin/chromium-browser'});
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({executablePath: '/opt/render/.cache/puppeteer'});
+    // const browser = await puppeteer.launch();
     const page = await browser.newPage();
 
     const ONE_SEC_IN_MS = 1000;
@@ -38,7 +38,7 @@ app.get('/', async (req, res) => {
         console.info(imageHref);
         await browser.close();
         res.json({image : imageHref || ''})
-    }, 15 * ONE_SEC_IN_MS);
+    }, 25 * ONE_SEC_IN_MS);
 
 });
 
@@ -46,4 +46,4 @@ app.get('/home', async (req, res) => {
     res.json({success : true});
 });
 
-app.listen(process.env.PORT || 3000)
+app.listen(process.env.PORT || 3000);
