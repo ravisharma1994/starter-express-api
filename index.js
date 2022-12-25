@@ -9,7 +9,7 @@ app.get('/', async (req, res) => {
 
     let searchString = req.query.value;
 
-    const browser = await puppeteer.launch({executablePath: '/opt/render/.cache/puppeteer'});
+    const browser = await puppeteer.launch({executablePath: '/opt/render/project/src/node_modules/puppeteer/.local-chromium/linux-609904'});
     // const browser = await puppeteer.launch();
     const page = await browser.newPage();
 
