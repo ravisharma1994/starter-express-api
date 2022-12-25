@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js",
-    "build": "npm run clean && npm run compile && npm run copy",
+    "start": "node build/index.js",
+    "build": "npm run clean && npm run compile",
     "compile": "npx babel ./ --out-dir build",
     "clean": "rm -rf build/*"
   },
