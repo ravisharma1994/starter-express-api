@@ -9,7 +9,6 @@
     "build": "npm run clean && npm run compile && npm run copy",
     "compile": "babel src --out-dir build",
     "clean": "rm -rf build/*"
-
   },
   "repository": {
     "type": "git",
@@ -24,5 +23,8 @@
   "dependencies": {
     "express": "^4.17.1",
     "puppeteer": "^19.4.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.20.7"
   }
 }
