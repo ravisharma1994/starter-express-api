@@ -24,7 +24,7 @@ app.get('/', async (req, res) => {
 
     await page.click('.icon-tabler-arrow-right');
 
-    console.log('PAGE IS SEARCHED ===========>', searchString);
+    console.info('PAGE IS SEARCHED ===========>', searchString);
 
     setTimeout(async () => {
         // await page.screenshot({ path: 'test.png' });
@@ -34,13 +34,12 @@ app.get('/', async (req, res) => {
         let imageHref = await page.evaluate((sel) => {
             return document.querySelector(sel).getAttribute('src').replace('/', '');
         }, IMAGE_SELECTOR);
-
-        // console.log(imageHref);
+        
+        console.info(imageHref);
         await browser.close();
         res.json({image : imageHref || ''})
-    }, 25 * ONE_SEC_IN_MS);
+    }, 15 * ONE_SEC_IN_MS);
 
-    // res.json({image : ''});
 });
 
 app.get('/home', async (req, res) => {
