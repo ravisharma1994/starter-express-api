@@ -10,7 +10,9 @@ app.get('/', async (req, res) => {
     let searchString = req.query.value;
 
     //const browser = await puppeteer.launch({executablePath: '/opt/render/project/src/node_modules/puppeteer/.local-chromium/linux-609904'});
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch(executablePath: '/usr/bin/chromium-browser',
+        ignoreDefaultArgs: ['--disable-extensions'] 
+    });
     const page = await browser.newPage();
 
     const ONE_SEC_IN_MS = 1000;
